@@ -1,8 +1,6 @@
 -- Soma os quadrados de 2 numeros
 doubleUs :: Int -> Int -> Int   
 doubleUs x y = x^2 + y^2
-
---alo
   
 -- Verifica se um numero eh par (mod retorna resto da divisao inteira)
 isEven :: Int -> Bool
