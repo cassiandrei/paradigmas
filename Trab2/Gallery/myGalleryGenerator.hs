@@ -25,12 +25,17 @@ genContent :: [(String,String)] -> String
 --genContent items = imageDiv(head items) ++ genContent (tail items) 
 genContent items = concat(map (imageDiv)items)
 
+--USANDO LIST
+genContent2 :: [(String,String)] -> String
+genContent2 n = concat[(imageDiv)x | x <- n]
+
+
 
 main :: IO ()
 main = do
     htmltemplate <- readFile infile
     putStrLn ("Gerando arquivo " ++ outfile)
-    writeFile outfile (fillHtml htmltemplate (genContent galleryItems))
+    writeFile outfile (fillHtml htmltemplate (genContent2 galleryItems))
     putStrLn "Feito!"
     where 
     infile = "template.html"
