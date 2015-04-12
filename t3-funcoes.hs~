@@ -1,13 +1,10 @@
-import Data.Char
-
---1
 firstName :: String -> String
 firstName [] = []
 firstName x = if (head x) /= ' ' then head x : firstName (tail x) else []
---2
+
 firstName' :: String -> String
 firstName' x = takeWhile (/= ' ') x
---3
+
 --lastName :: String -> String
 --lastName x = if (last x) /= ' ' then last x : lastName (init x) else []
 --lastName :: String -> String
@@ -19,22 +16,10 @@ lastName :: String -> String
 lastName x 
 	| filter (==' ')  x == [] = x
 	| otherwise = lastName (tail x)
---4	
+	
 userName :: String -> String
-userName x = map toLower(head x : reverse(takeWhile(/=' ')(reverse (tail x))))
+userName x = head x : filter(/=' ')(dropWhile(/=' ')x)
 
---5
-encodeName :: String -> String
-encodeName s = 
-	let change x
-		| x == 'a' = "4"
-		| x == 'e' = "3"
-		| x == 'i' = "1"
-		| x == 'o' = "0"
-		| otherwise = [x]
-	in concat(map (change) s)
-
---6
 isElem :: Int -> [Int] -> Bool
 isElem x y
 	|y == [] = False
@@ -50,12 +35,9 @@ voGais x = if (head x) == 'a' || (head x) == 'e' || (head x) == 'i' || (head x) 
 consoantes :: String -> Int
 consoantes x = length(filter(/='u')(filter(/='o')(filter(/='i')(filter(/='e')(filter(/='a')x)))))
 
---9
-isInt :: String -> Bool
-isInt x = if any (>'9')x then False else True
-
 --10
 strToInt :: String -> Int
-strToInt x = sum( zipWith(*) (reverse(map digitToInt x)) [1,10,100,1000,10000,100000,1000000])
+strToInt x = (map (+48) x)
+strToInt x = sum(zipWith x [100, 10, 1])
 
 
