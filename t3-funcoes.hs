@@ -56,6 +56,5 @@ isInt x = if any (>'9')x then False else True
 
 --10
 strToInt :: String -> Int
-strToInt x = sum( zipWith(*) (reverse(map digitToInt x)) [1,10,100,1000,10000,100000,1000000])
-
+strToInt x = sum( zipWith(*) (reverse(map digitToInt x)) (map(10^)[0..]))
 
