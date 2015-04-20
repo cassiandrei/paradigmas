@@ -83,7 +83,8 @@ ciumes(X,Y) :- casal(X, Y), casal(Y, _); casal(Y, X), casal(X, _); casal(A, X), 
 % motivo
 motivo(X) :- pobre(X), insano(X), ciumes(X, anita).
 
-% assassino(X) :- motivo(X), acesso(X).
+% assassino
+assassino(X) :- motivo(X), acesso(X).
 
 
 
