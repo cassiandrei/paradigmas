@@ -1,0 +1,27 @@
+% dias
+segunda(pedro, santa).
+segunda(caren, porto).
+segunda(henrique, ap).
+
+terca(caren, porto).
+terca(pedro, santa).
+terca(henrique, porto).
+
+quarta(pedro, porto).
+quarta(caren, porto).
+quarta(henrique, ap).
+
+quinta(pedro, santa).
+quinta(caren, santa).
+quinta(henrique, ap).
+quinta(,).
+
+sexta(caren, ap).
+sexta(pedro, ap).
+sexta(henrique, ap).
+sexta(,).
+sexta(,).
+sexta(,).
+sexta(,).
+sexta(,).
+
