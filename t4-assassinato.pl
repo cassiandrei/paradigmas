@@ -69,10 +69,13 @@ casal(henrique, maria).
 casal(adriano, maria).
 casal(maria, caren).
 
+% dinheiro
+dinheiro(X) :- pobre(X).
+
 % pistas
-rouboarma(X) :-  quinta(X, porto); quarta(X,santa); quinta(X, ap); quarta(X, ap).
-roubochave(X) :- quarta(X, santa); terca(X, porto);
-estavanoap(X) :- quinta(X, ap); sexta(X, ap);
+rouboarma(X) :-  quinta(X, porto); quarta(X, santa); quinta(X, ap); quarta(X, ap).
+roubochave(X) :- segunda(X, santa); terca(X, porto).
+estavanoap(X) :- quinta(X, ap); sexta(X, ap).
 
 % acesso ao ap
 acesso(X) :- rouboarma(X), roubochave(X), estavanoap(X).
@@ -81,21 +84,7 @@ acesso(X) :- rouboarma(X), roubochave(X), estavanoap(X).
 ciumes(X,Y) :- casal(X, Y), casal(Y, _); casal(Y, X), casal(X, _); casal(A, X), casal(Y, A); casal(A, X), casal(A, Y).
 
 % motivo
-motivo(X) :- pobre(X), insano(X), ciumes(X, anita).
+motivo(X) :- dinheiro(X); insano(X); ciumes(X, anita).
 
 % assassino
 assassino(X) :- motivo(X), acesso(X).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
