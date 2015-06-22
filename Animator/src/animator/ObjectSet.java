@@ -129,6 +129,9 @@ class ObjectSet {
             for(i=0;i<images.length;i++){
                 if(images[i].tipomove().equals("Line"))
                 images[i].setPoint(moves.linear(images[i].getPoint()));
+                if(images[i].tipomove().equals("Circle"))
+                images[i].setPoint(moves.rotation(images[i].getPoint(),images[i].getOrigem(), angulo));
+                angulo+=0.1;
             }
         }
     }
