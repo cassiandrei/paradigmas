@@ -107,6 +107,9 @@ class ObjectSet {
                     Lista1.get(i).setPoint(moves.rotation(Lista1.get(i).getPoint(), Lista1.get(i).getOrigem(), angulo));
                     angulo+= 0.1;
                 }
+                if(Lista1.get(i).tipomove().equals("Zoom")){
+                    Lista1.get(i).zoom();
+                }
             }           
         }
         if(Lista2!=null){
@@ -117,6 +120,9 @@ class ObjectSet {
                     Lista2.get(i).setPoint(moves.rotation(Lista2.get(i).getPoint(), Lista2.get(i).getOrigem(), angulo));
                     angulo+= 0.1;
                 }
+                if(Lista2.get(i).tipomove().equals("Zoom")){
+                    Lista2.get(i).zoom();
+                }                
             }    
         }
         if(images!=null){

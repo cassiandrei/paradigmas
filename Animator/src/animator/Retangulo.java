@@ -20,6 +20,7 @@ public class Retangulo {
     private Point pt;
     private String tipom;
     private Point origem;
+    private boolean zoom=false;
     
     public Retangulo (Point pt, int x, int y, String tipom){
         this.pt = pt;
@@ -49,5 +50,20 @@ public class Retangulo {
     
     public void setPoint(Point pt){
         this.pt=pt;
+    }
+    
+    public void zoom(){
+       if(zoom==false){
+            this.x += 1;
+            this.y += 1;
+       if(this.x==300)
+           this.zoom=true;
+       }
+       else{
+           this.x -= 1;
+           this.y -= 1;
+           if(this.x==100)
+                this.zoom=false;
+       }  
     }
 }

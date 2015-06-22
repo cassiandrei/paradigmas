@@ -18,7 +18,7 @@ public class Circulo {
     private Point pt;
     private String tipom;
     private Point origem;
-    
+    private boolean zoom=false;
 
     
 public Circulo(Point pt, int raio, String tipom){
@@ -44,6 +44,19 @@ public Point getPoint(){
 
 public Point getOrigem(){
     return this.origem;
+}
+
+public void zoom(){
+    if(zoom==false){
+            this.raio += 5;
+       if(this.raio==100)
+           this.zoom=true;
+       }
+       else{
+           this.raio -= 5;
+           if(this.raio==25)
+                this.zoom=false;
+       }  
 }
 
     
