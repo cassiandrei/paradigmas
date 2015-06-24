@@ -20,7 +20,7 @@ class ObjectSet {
     private double angulo;
     ArrayList<Retangulo> Lista1 = new ArrayList<Retangulo>();
     ArrayList<Circulo> Lista2 = new ArrayList<Circulo>();
-    
+    ArrayList<Estrela>Lista3 = new ArrayList<Estrela>();
     // Adiciona objetos da classe Image ao ObjectSet.
     // O codigo abaixo eh somente um teste e precisa ser substituido.
     void addImages(int n, Dimension dim, BufferedImage image, String path) {
@@ -36,9 +36,12 @@ class ObjectSet {
     // Adiciona objetos da classe Star ao ObjectSet.
     // O codigo abaixo eh somente um teste e precisa ser substituido.
     void addStars(int n, Dimension dim, String path) {
-        System.out.printf("Test: adding %d stars\n", n);
-        System.out.printf("Test: motion path %s\n", path);
-
+        int i;
+        for(i=0;i<n;i++){
+            Point pt3 = new Point(rm.nextInt(500),rm.nextInt(500));
+            Estrela est = new Estrela(pt3, 50, 50, path);
+            Lista3.add(est);
+        }
     }
     
     // Adiciona objetos da classe Star ao ObjectSet.
@@ -87,6 +90,12 @@ class ObjectSet {
                 Lista2.get(i).desenhac(g);
             }
         }
+        
+        if(Lista3!=null){
+            for(i=0;i<Lista3.size();i++){
+                Lista3.get(i).desenhaest(g);
+            }
+        }
         if(images != null){
             for(i=0;i<images.length;i++){
                 images[i].draw(g);
@@ -125,6 +134,21 @@ class ObjectSet {
                 }                
             }    
         }
+            if(Lista3!=null){
+            for(i=0;i<Lista3.size();i++){
+                if(Lista3.get(i).tipomove().equals("Line"))
+                    Lista3.get(i).setPoint(moves.linear(Lista3.get(i).getPoint()));
+                if(Lista3.get(i).tipomove().equals("Circle")){
+                    Lista3.get(i).setPoint(moves.rotation(Lista3.get(i).getPoint(), Lista3.get(i).getOrigem(), angulo));
+                    angulo+= 0.1;
+                }
+                if(Lista3.get(i).tipomove().equals("Zoom")){
+                    Lista3.get(i).zoom();
+                }
+            }           
+        }
+        
+        
         if(images!=null){
             for(i=0;i<images.length;i++){
                 if(images[i].tipomove().equals("Line"))
