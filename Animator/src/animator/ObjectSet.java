@@ -39,7 +39,7 @@ class ObjectSet {
         int i;
         for(i=0;i<n;i++){
             Point pt3 = new Point(rm.nextInt(500),rm.nextInt(500));
-            Estrela est = new Estrela(pt3, 50, 50, path);
+            Estrela est = new Estrela(pt3, 50, 100, path);
             Lista3.add(est);
         }
     }

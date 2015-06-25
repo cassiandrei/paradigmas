@@ -51,7 +51,7 @@ public Estrela (Point pt, int raioa, int raiob, String tipom){
             a++;
             
             angulo = angulo + Math.PI/5;
-            x1[1] = (int) ((raioa * Math.cos(angulo)) + pt.x);
+            x1[1] = (int) ((raiob * Math.cos(angulo)) + pt.x);
             y1[1] = (int) ((raiob * Math.sin(angulo)) + pt.y);
             angulo= angulo + Math.PI/5;
             
@@ -61,9 +61,10 @@ public Estrela (Point pt, int raioa, int raiob, String tipom){
             y2[a] = y1[2];
             
             g.setColor(Color.yellow);
-            g.fillPolygon(x1, y1, 2);
+            g.fillPolygon(x1, y1, 3);
         }
         g.fillPolygon(x2, y2, 5);
+        
     }
     
     public String tipomove(){
