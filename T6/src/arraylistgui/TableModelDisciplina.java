@@ -25,35 +25,42 @@ class TableModelDisciplina extends AbstractTableModel {
     // Construtor default
     public TableModelDisciplina() {
         discips = new ArrayList<Disciplina>();
-        // COMPLETE-ME: inicialize a lista com algumas disciplinas
+        
     }
 
     // Metodo chamado pela GUI para remover um elemento
     public void remove(int index) {
         // COMPLETE-ME: remova o elemento de indice index da lista
 	fireTableRowsDeleted(index, index);
+        discips.remove(index);
     }
 
     // Metodo chamado pela GUI para selecionar um elemento
     public Disciplina select(int index) {
         // COMPLETE-ME: retorne o elemento de indice index da lista
+        return discips.get(index);
     }
 
     // Metodo chamado pela GUI para inserir um elemento
     public void add(Disciplina d) {
         // COMPLETE-ME: insira a disciplina d na lista
+        
         fireTableRowsInserted(discips.size()-1, discips.size()-1);
+        discips.add(d);
     }
 
     // Metodo chamado pela GUI para alterar um elemento
     public void update(int index, Disciplina d) {
         discips.set(index, d);
+        discips.set(index, d);
         fireTableRowsUpdated(index, index);
+        
     }
 
     @Override
     public int getColumnCount() {
         // COMPLETE-ME: retorne o numero de colunas que a tabela devera conter
+        return columnNames.length;
     }
 
     @Override
