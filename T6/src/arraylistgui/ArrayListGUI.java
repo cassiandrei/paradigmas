@@ -21,12 +21,12 @@ import javax.swing.JOptionPane;
  */
 public class ArrayListGUI extends javax.swing.JFrame {
 
-    private TableModelDisciplina tableModelDisciplina;
+    private TableModelPersonagem tableModelDisciplina;
 
     /** Creates new form ArrayListGUI */
     public ArrayListGUI() {
         initComponents();
-        tableModelDisciplina = new TableModelDisciplina();
+        tableModelDisciplina = new TableModelPersonagem();
         tableDisciplina.setModel(tableModelDisciplina);
     }
 
@@ -41,7 +41,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
         scrollpaneTable = new javax.swing.JScrollPane();
         tableDisciplina = new javax.swing.JTable();
-        labelNome = new javax.swing.JLabel();
+        labelJogador = new javax.swing.JLabel();
         textNome = new javax.swing.JTextField();
         labelNota = new javax.swing.JLabel();
         textNota = new javax.swing.JTextField();
@@ -49,10 +49,20 @@ public class ArrayListGUI extends javax.swing.JFrame {
         buttonRemover = new javax.swing.JButton();
         buttonInserir = new javax.swing.JButton();
         labelAno = new javax.swing.JLabel();
-        labelSemestre = new javax.swing.JLabel();
-        comboSemestre = new javax.swing.JComboBox();
+        labelProfissao = new javax.swing.JLabel();
+        comboProfissao = new javax.swing.JComboBox();
         buttonAlterar = new javax.swing.JButton();
         textAno = new javax.swing.JTextField();
+        LabelPersonagem = new javax.swing.JLabel();
+        textP = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        LabelLevel = new javax.swing.JLabel();
+        textLevel = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
+        jLabel5 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,7 +85,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
         });
         scrollpaneTable.setViewportView(tableDisciplina);
 
-        labelNome.setText("Nome");
+        labelJogador.setText("Jogador");
 
         labelNota.setText("Nota");
 
@@ -102,9 +112,15 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
         labelAno.setText("Ano");
 
-        labelSemestre.setText("Semestre");
+        labelProfissao.setText("Profissao");
 
-        comboSemestre.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2" }));
+        comboProfissao.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Polícia Militar", "ROTAM", "Exército", "PF", "Polícia Civil", "Comando Vermelho", "PCC", "Máfia" }));
+        comboProfissao.setToolTipText("");
+        comboProfissao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboProfissaoActionPerformed(evt);
+            }
+        });
 
         buttonAlterar.setText("Alterar");
         buttonAlterar.addActionListener(new java.awt.event.ActionListener() {
@@ -113,34 +129,81 @@ public class ArrayListGUI extends javax.swing.JFrame {
             }
         });
 
+        LabelPersonagem.setText("Personagem");
+
+        jLabel2.setText("Habilidade");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Atirador", "Piloto", "Estrategista", "Atleta", "Inteligente" }));
+
+        LabelLevel.setText("Level");
+
+        textLevel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textLevelActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Cargo");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Novato", "Membro", "Veterano", "Confiavel", "Braço Direito", "Líder" }));
+
+        jLabel5.setText("Especialidade");
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mecânico", "Médico", "Detetive", "Negociador" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollpaneTable, javax.swing.GroupLayout.DEFAULT_SIZE, 676, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelSemestre)
-                            .addComponent(labelNome)
-                            .addComponent(labelAno)
-                            .addComponent(labelNota))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(comboSemestre, 0, 601, Short.MAX_VALUE)
-                            .addComponent(textNome, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
-                            .addComponent(textNota, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
-                            .addComponent(textAno, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)))
+                    .addComponent(scrollpaneTable)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(labelAno)
+                        .addGap(40, 40, 40)
+                        .addComponent(textAno, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textNota)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonLimpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonRemover)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonInserir)))
+                        .addComponent(buttonInserir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LabelPersonagem)
+                                    .addComponent(labelJogador)
+                                    .addComponent(LabelLevel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(textP, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel2))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelProfissao))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(textLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addComponent(labelNota))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(comboProfissao, 0, 485, Short.MAX_VALUE)
+                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 99, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -149,30 +212,45 @@ public class ArrayListGUI extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelAno)
-                    .addComponent(textAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelJogador)
+                    .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelProfissao)
+                    .addComponent(comboProfissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelSemestre)
-                    .addComponent(comboSemestre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(LabelPersonagem)
+                    .addComponent(textP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelNome))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNota)
-                    .addComponent(textNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(LabelLevel)
+                    .addComponent(textLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(labelNota)
+                        .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonInserir)
                     .addComponent(buttonRemover)
                     .addComponent(buttonLimpar)
-                    .addComponent(buttonAlterar))
+                    .addComponent(buttonAlterar)
+                    .addComponent(labelAno)
+                    .addComponent(textAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(scrollpaneTable, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                .addComponent(scrollpaneTable, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -186,12 +264,14 @@ public class ArrayListGUI extends javax.swing.JFrame {
         tableModelDisciplina.remove(index);
     }//GEN-LAST:event_buttonRemoverActionPerformed
 
-    private Disciplina newFromGUI() {
+    private Personagem newFromGUI() {
         try {
-            Disciplina discip = new Disciplina();
+            Personagem discip = new Personagem();
             discip.setAno(Integer.parseInt(textAno.getText()));
-            discip.setSemestre(comboSemestre.getSelectedIndex() + 1);
-            discip.setNome(textNome.getText());
+            discip.setProfissao(comboProfissao.getSelectedIndex()+1);
+            discip.setJogador(textNome.getText());
+            discip.setPersonagem(textP.getText());
+            discip.setLevel(Integer.parseInt(textLevel.getText()));
             discip.setNota(Float.parseFloat(textNota.getText()));
             return discip;
         }
@@ -204,7 +284,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
     
     private void buttonInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInserirActionPerformed
         // TODO add your handling code here:
-        Disciplina discip = newFromGUI();
+        Personagem discip = newFromGUI();
         if (discip != null)
             tableModelDisciplina.add(discip);
     }//GEN-LAST:event_buttonInserirActionPerformed
@@ -214,7 +294,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
         int index = tableDisciplina.getSelectedRow();
         if (index == -1)
             return;
-        Disciplina discip = newFromGUI();
+        Personagem discip = newFromGUI();
         if (discip != null)
             tableModelDisciplina.update(index, discip);
     }//GEN-LAST:event_buttonAlterarActionPerformed
@@ -222,8 +302,10 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
         // TODO add your handling code here:
         textAno.setText("");
-        comboSemestre.setSelectedIndex(0);
+        textLevel.setText("");
+        comboProfissao.setSelectedIndex(0);
         textNome.setText("");
+        textP.setText("");
         textNota.setText("");
     }//GEN-LAST:event_buttonLimparActionPerformed
 
@@ -231,13 +313,23 @@ public class ArrayListGUI extends javax.swing.JFrame {
         int index = tableDisciplina.getSelectedRow();
         if (index == -1)
             return;
-        Disciplina d = tableModelDisciplina.select(index);
+        Personagem d = tableModelDisciplina.select(index);
         textAno.setText(Integer.toString(d.getAno()));
-        comboSemestre.setSelectedIndex(d.getSemestre()-1);
-        textNome.setText(d.getNome());
+        textLevel.setText(Integer.toString(d.getLevel()));
+        comboProfissao.setSelectedIndex(d.getProfissao()-1);
+        textNome.setText(d.getJogador());
+        textP.setText(d.getPersonagem());
         textNota.setText(Float.toString(d.getNota()));
 
     }//GEN-LAST:event_tableDisciplinaMouseClicked
+
+    private void comboProfissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProfissaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboProfissaoActionPerformed
+
+    private void textLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textLevelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textLevelActionPerformed
 
     /**
     * @param args the command line arguments
@@ -251,20 +343,30 @@ public class ArrayListGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LabelLevel;
+    private javax.swing.JLabel LabelPersonagem;
     private javax.swing.JButton buttonAlterar;
     private javax.swing.JButton buttonInserir;
     private javax.swing.JButton buttonLimpar;
     private javax.swing.JButton buttonRemover;
-    private javax.swing.JComboBox comboSemestre;
+    private javax.swing.JComboBox comboProfissao;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel labelAno;
-    private javax.swing.JLabel labelNome;
+    private javax.swing.JLabel labelJogador;
     private javax.swing.JLabel labelNota;
-    private javax.swing.JLabel labelSemestre;
+    private javax.swing.JLabel labelProfissao;
     private javax.swing.JScrollPane scrollpaneTable;
     private javax.swing.JTable tableDisciplina;
     private javax.swing.JTextField textAno;
+    private javax.swing.JTextField textLevel;
     private javax.swing.JTextField textNome;
     private javax.swing.JTextField textNota;
+    private javax.swing.JTextField textP;
     // End of variables declaration//GEN-END:variables
 
 }

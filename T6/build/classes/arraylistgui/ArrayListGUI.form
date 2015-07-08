@@ -23,26 +23,17 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="scrollpaneTable" alignment="0" pref="676" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="labelSemestre" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelNome" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelAno" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelNota" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="comboSemestre" alignment="0" pref="601" max="32767" attributes="0"/>
-                          <Component id="textNome" alignment="0" pref="601" max="32767" attributes="1"/>
-                          <Component id="textNota" alignment="0" pref="601" max="32767" attributes="1"/>
-                          <Component id="textAno" alignment="0" pref="601" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="scrollpaneTable" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
+                      <Component id="labelAno" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="textAno" min="-2" pref="77" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="textNota" max="32767" attributes="1"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="buttonLimpar" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="buttonAlterar" linkSize="1" min="-2" pref="71" max="-2" attributes="0"/>
@@ -50,6 +41,47 @@
                       <Component id="buttonRemover" linkSize="1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="buttonInserir" linkSize="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="LabelPersonagem" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="labelJogador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LabelLevel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="textP" min="-2" pref="282" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="textNome" min="-2" pref="282" max="-2" attributes="1"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="labelProfissao" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="textLevel" min="-2" pref="282" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="labelNota" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jComboBox1" max="32767" attributes="0"/>
+                          <Component id="comboProfissao" pref="485" max="32767" attributes="0"/>
+                          <Component id="jComboBox2" max="32767" attributes="0"/>
+                          <Component id="jComboBox3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="99" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -59,35 +91,53 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="labelAno" min="-2" max="-2" attributes="0"/>
-                  <Component id="textAno" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelJogador" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelProfissao" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboProfissao" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelSemestre" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboSemestre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LabelPersonagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textP" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="textNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="LabelLevel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textLevel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelNota" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textNota" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="labelNota" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="buttonInserir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buttonRemover" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buttonLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buttonAlterar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelAno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textAno" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textNota" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="scrollpaneTable" pref="178" max="32767" attributes="0"/>
+              <Component id="scrollpaneTable" pref="322" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -122,9 +172,9 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="labelNome">
+    <Component class="javax.swing.JLabel" name="labelJogador">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nome"/>
+        <Property name="text" type="java.lang.String" value="Jogador"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textNome">
@@ -165,20 +215,30 @@
         <Property name="text" type="java.lang.String" value="Ano"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelSemestre">
+    <Component class="javax.swing.JLabel" name="labelProfissao">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Semestre"/>
+        <Property name="text" type="java.lang.String" value="Profissao"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="comboSemestre">
+    <Component class="javax.swing.JComboBox" name="comboProfissao">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
-            <StringItem index="0" value="1"/>
-            <StringItem index="1" value="2"/>
+          <StringArray count="8">
+            <StringItem index="0" value="Pol&#xed;cia Militar"/>
+            <StringItem index="1" value="ROTAM"/>
+            <StringItem index="2" value="Ex&#xe9;rcito"/>
+            <StringItem index="3" value="PF"/>
+            <StringItem index="4" value="Pol&#xed;cia Civil"/>
+            <StringItem index="5" value="Comando Vermelho"/>
+            <StringItem index="6" value="PCC"/>
+            <StringItem index="7" value="M&#xe1;fia"/>
           </StringArray>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboProfissaoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonAlterar">
       <Properties>
@@ -189,6 +249,77 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="textAno">
+    </Component>
+    <Component class="javax.swing.JLabel" name="LabelPersonagem">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Personagem"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textP">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Habilidade"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="5">
+            <StringItem index="0" value="Atirador"/>
+            <StringItem index="1" value="Piloto"/>
+            <StringItem index="2" value="Estrategista"/>
+            <StringItem index="3" value="Atleta"/>
+            <StringItem index="4" value="Inteligente"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LabelLevel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Level"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textLevel">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textLevelActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cargo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox2">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="6">
+            <StringItem index="0" value="Novato"/>
+            <StringItem index="1" value="Membro"/>
+            <StringItem index="2" value="Veterano"/>
+            <StringItem index="3" value="Confiavel"/>
+            <StringItem index="4" value="Bra&#xe7;o Direito"/>
+            <StringItem index="5" value="L&#xed;der"/>
+          </StringArray>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Especialidade"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox3">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Mec&#xe2;nico"/>
+            <StringItem index="1" value="M&#xe9;dico"/>
+            <StringItem index="2" value="Detetive"/>
+            <StringItem index="3" value="Negociador"/>
+          </StringArray>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

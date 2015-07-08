@@ -14,17 +14,17 @@ import javax.swing.table.AbstractTableModel;
  * @author andrea
  */
 
-class TableModelDisciplina extends AbstractTableModel {
+class TableModelPersonagem extends AbstractTableModel {
 
     // Lista de disciplinas
-    private ArrayList<Disciplina> discips;
+    private ArrayList<Personagem> discips;
 
     // Array com os nomes das colunas da tabela
-    private static final String[] columnNames = {"Ano", "Semestre", "Nome", "Nota"};
+    private static final String[] columnNames = {"Jogador", "Personagem", "Level", "Profissao", "Habilidade", "Cargo", "Especialidade"};
 
     // Construtor default
-    public TableModelDisciplina() {
-        discips = new ArrayList<Disciplina>();
+    public TableModelPersonagem() {
+        discips = new ArrayList<Personagem>();
         
     }
 
@@ -36,13 +36,13 @@ class TableModelDisciplina extends AbstractTableModel {
     }
 
     // Metodo chamado pela GUI para selecionar um elemento
-    public Disciplina select(int index) {
+    public Personagem select(int index) {
         // COMPLETE-ME: retorne o elemento de indice index da lista
         return discips.get(index);
     }
 
     // Metodo chamado pela GUI para inserir um elemento
-    public void add(Disciplina d) {
+    public void add(Personagem d) {
         // COMPLETE-ME: insira a disciplina d na lista
         
         fireTableRowsInserted(discips.size()-1, discips.size()-1);
@@ -50,7 +50,7 @@ class TableModelDisciplina extends AbstractTableModel {
     }
 
     // Metodo chamado pela GUI para alterar um elemento
-    public void update(int index, Disciplina d) {
+    public void update(int index, Personagem d) {
         discips.set(index, d);
         discips.set(index, d);
         fireTableRowsUpdated(index, index);
@@ -76,10 +76,10 @@ class TableModelDisciplina extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         switch(columnIndex) {
-            case 0: return discips.get(rowIndex).getAno();
-            case 1: return discips.get(rowIndex).getSemestre();
-            case 2: return discips.get(rowIndex).getNome();
-            case 3: return discips.get(rowIndex).getNota();
+            case 0: return discips.get(rowIndex).getJogador();
+            case 1: return discips.get(rowIndex).getPersonagem();
+            case 2: return discips.get(rowIndex).getLevel();
+            case 3: return discips.get(rowIndex).getProfissao();
         }
         return null;
     }
