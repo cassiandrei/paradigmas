@@ -11,40 +11,38 @@ package arraylistgui;
  */
 public class Personagem {
 
-    private int ano;
-    private int semestre;
     private int level;
     private String jogador;
     private String personagem;
+    private String habilidade;
     private String profissao;
-    private float nota;
+    private String cargo;
+    private String especialidade;
 
     public Personagem() {
     }
     
-    public Personagem(int ano, int semestre, String nome, float nota) {
-        this.ano = ano;
-        this.semestre = semestre;
-        this.jogador = jogador;
-        this.nota = nota;
-    }
-
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano) {
-        this.ano = ano;
-    }
-    
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
+    public Personagem(String nome, String personagem, String profissao, String cargo, String especialidade, int level) {
+        this.jogador = nome;
+        this.personagem = personagem;
+        this.profissao = profissao;
+        this.cargo = cargo;
+        this.especialidade = especialidade;
         this.level = level;
     }
 
+    public int getLevel() {
+        return level;
+    }
+    
+    public String getCargo() {
+        return cargo;
+    }
+    
+    public String getEspecialidade() {
+        return especialidade;
+    }
+    
     public String getJogador() {
         return jogador;
     }
@@ -56,9 +54,25 @@ public class Personagem {
     public String getProfissao() {
         return profissao;
     }
+    
+    public String getHabilidade() {
+        return habilidade;
+    }
 
     public void setJogador(String nome) {
         this.jogador = nome;
+    }
+    
+    public void setCargo(String nome) {
+        this.cargo = nome;
+    }
+    
+    public void setEspecialidade(String nome) {
+        this.especialidade = nome;
+    }
+    
+    public void setHabilidade(String nome) {
+        this.habilidade = nome;
     }
     
     public void setPersonagem(String nome) {
@@ -68,21 +82,8 @@ public class Personagem {
     public void setProfissao(String nome) {
         this.profissao = nome;
     }
-
-    public float getNota() {
-        return nota;
+    
+    public void setLevel(int level) {
+        this.level = level;
     }
-
-    public void setNota(float nota) {
-        this.nota = nota;
-    }
-
-    public int getSemestre() {
-        return semestre;
-    }
-
-    public void setSemestre(int semestre) {
-        this.semestre = semestre;
-    }
-
 }

@@ -80,6 +80,9 @@ class TableModelPersonagem extends AbstractTableModel {
             case 1: return discips.get(rowIndex).getPersonagem();
             case 2: return discips.get(rowIndex).getLevel();
             case 3: return discips.get(rowIndex).getProfissao();
+            case 4: return discips.get(rowIndex).getHabilidade();
+            case 5: return discips.get(rowIndex).getCargo();
+            case 6: return discips.get(rowIndex).getEspecialidade();
         }
         return null;
     }

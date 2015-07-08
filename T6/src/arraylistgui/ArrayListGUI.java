@@ -43,26 +43,22 @@ public class ArrayListGUI extends javax.swing.JFrame {
         tableDisciplina = new javax.swing.JTable();
         labelJogador = new javax.swing.JLabel();
         textNome = new javax.swing.JTextField();
-        labelNota = new javax.swing.JLabel();
-        textNota = new javax.swing.JTextField();
         buttonLimpar = new javax.swing.JButton();
         buttonRemover = new javax.swing.JButton();
         buttonInserir = new javax.swing.JButton();
-        labelAno = new javax.swing.JLabel();
         labelProfissao = new javax.swing.JLabel();
         comboProfissao = new javax.swing.JComboBox();
         buttonAlterar = new javax.swing.JButton();
-        textAno = new javax.swing.JTextField();
         LabelPersonagem = new javax.swing.JLabel();
         textP = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        comboHabilidade = new javax.swing.JComboBox();
         LabelLevel = new javax.swing.JLabel();
         textLevel = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        comboCargo = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox();
+        comboEspecialidade = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,8 +83,6 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
         labelJogador.setText("Jogador");
 
-        labelNota.setText("Nota");
-
         buttonLimpar.setText("Limpar");
         buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,8 +103,6 @@ public class ArrayListGUI extends javax.swing.JFrame {
                 buttonInserirActionPerformed(evt);
             }
         });
-
-        labelAno.setText("Ano");
 
         labelProfissao.setText("Profissao");
 
@@ -133,7 +125,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
         jLabel2.setText("Habilidade");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Atirador", "Piloto", "Estrategista", "Atleta", "Inteligente" }));
+        comboHabilidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Atirador", "Piloto", "Estrategista", "Atleta", "Inteligente" }));
 
         LabelLevel.setText("Level");
 
@@ -145,11 +137,11 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
         jLabel4.setText("Cargo");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Novato", "Membro", "Veterano", "Confiavel", "Braço Direito", "Líder" }));
+        comboCargo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Novato", "Membro", "Veterano", "Confiavel", "Braço Direito", "Líder" }));
 
         jLabel5.setText("Especialidade");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mecânico", "Médico", "Detetive", "Negociador" }));
+        comboEspecialidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mecânico", "Médico", "Detetive", "Negociador" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -160,12 +152,7 @@ public class ArrayListGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(scrollpaneTable)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(labelAno)
-                        .addGap(40, 40, 40)
-                        .addComponent(textAno, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textNota)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(buttonLimpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,34 +162,31 @@ public class ArrayListGUI extends javax.swing.JFrame {
                         .addComponent(buttonInserir))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LabelPersonagem)
-                                    .addComponent(labelJogador)
-                                    .addComponent(LabelLevel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(textP, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelProfissao))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(textLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                            .addComponent(labelNota))
+                            .addComponent(LabelPersonagem)
+                            .addComponent(labelJogador)
+                            .addComponent(LabelLevel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textP, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelProfissao))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(comboHabilidade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(comboProfissao, 0, 485, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(comboCargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(comboEspecialidade, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 99, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -223,32 +207,23 @@ public class ArrayListGUI extends javax.swing.JFrame {
                     .addComponent(LabelPersonagem)
                     .addComponent(textP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboHabilidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelLevel)
                     .addComponent(textLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(labelNota)
-                        .addGap(14, 14, 14))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)))
+                    .addComponent(comboCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonInserir)
                     .addComponent(buttonRemover)
                     .addComponent(buttonLimpar)
-                    .addComponent(buttonAlterar)
-                    .addComponent(labelAno)
-                    .addComponent(textAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonAlterar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(scrollpaneTable, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                 .addContainerGap())
@@ -267,12 +242,13 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private Personagem newFromGUI() {
         try {
             Personagem discip = new Personagem();
-            discip.setAno(Integer.parseInt(textAno.getText()));
-            discip.setProfissao(comboProfissao.getSelectedIndex()+1);
+            discip.setProfissao((String) comboProfissao.getSelectedItem());
+            discip.setHabilidade((String) comboHabilidade.getSelectedItem());
+            discip.setCargo((String) comboCargo.getSelectedItem());
+            discip.setEspecialidade((String) comboEspecialidade.getSelectedItem());
             discip.setJogador(textNome.getText());
             discip.setPersonagem(textP.getText());
             discip.setLevel(Integer.parseInt(textLevel.getText()));
-            discip.setNota(Float.parseFloat(textNota.getText()));
             return discip;
         }
         catch (Exception e) {
@@ -301,12 +277,13 @@ public class ArrayListGUI extends javax.swing.JFrame {
 
     private void buttonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLimparActionPerformed
         // TODO add your handling code here:
-        textAno.setText("");
         textLevel.setText("");
         comboProfissao.setSelectedIndex(0);
+        comboHabilidade.setSelectedIndex(0);
+        comboCargo.setSelectedIndex(0);
+        comboEspecialidade.setSelectedIndex(0);
         textNome.setText("");
         textP.setText("");
-        textNota.setText("");
     }//GEN-LAST:event_buttonLimparActionPerformed
 
     private void tableDisciplinaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDisciplinaMouseClicked
@@ -314,12 +291,13 @@ public class ArrayListGUI extends javax.swing.JFrame {
         if (index == -1)
             return;
         Personagem d = tableModelDisciplina.select(index);
-        textAno.setText(Integer.toString(d.getAno()));
         textLevel.setText(Integer.toString(d.getLevel()));
-        comboProfissao.setSelectedIndex(d.getProfissao()-1);
+        comboProfissao.setSelectedItem(d.getProfissao());
+        comboHabilidade.setSelectedItem(d.getHabilidade());
+        comboCargo.setSelectedItem(d.getCargo());
+        comboEspecialidade.setSelectedItem(d.getEspecialidade());
         textNome.setText(d.getJogador());
         textP.setText(d.getPersonagem());
-        textNota.setText(Float.toString(d.getNota()));
 
     }//GEN-LAST:event_tableDisciplinaMouseClicked
 
@@ -349,23 +327,19 @@ public class ArrayListGUI extends javax.swing.JFrame {
     private javax.swing.JButton buttonInserir;
     private javax.swing.JButton buttonLimpar;
     private javax.swing.JButton buttonRemover;
+    private javax.swing.JComboBox comboCargo;
+    private javax.swing.JComboBox comboEspecialidade;
+    private javax.swing.JComboBox comboHabilidade;
     private javax.swing.JComboBox comboProfissao;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel labelAno;
     private javax.swing.JLabel labelJogador;
-    private javax.swing.JLabel labelNota;
     private javax.swing.JLabel labelProfissao;
     private javax.swing.JScrollPane scrollpaneTable;
     private javax.swing.JTable tableDisciplina;
-    private javax.swing.JTextField textAno;
     private javax.swing.JTextField textLevel;
     private javax.swing.JTextField textNome;
-    private javax.swing.JTextField textNota;
     private javax.swing.JTextField textP;
     // End of variables declaration//GEN-END:variables
 
