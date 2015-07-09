@@ -4,9 +4,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/alunos/cschneider/Github/Paradigmas/T6/src/arraylistgui/ArrayListGUI.java</file>
-            <file>file:/home/alunos/cschneider/Github/Paradigmas/T6/src/arraylistgui/TableModelDisciplina.java</file>
-            <file>file:/home/alunos/cschneider/Github/Paradigmas/T6/src/arraylistgui/Disciplina.java</file>
+            <file>file:/home/alunos/cschneider/git/T6/src/arraylistgui/TableModelPersonagem.java</file>
+            <file>file:/home/alunos/cschneider/git/T6/src/arraylistgui/Personagem.java</file>
+            <file>file:/home/alunos/cschneider/git/T6/src/arraylistgui/Grupo.java</file>
+            <file>file:/home/alunos/cschneider/git/T6/src/arraylistgui/ArrayListGUI.java</file>
         </group>
     </open-files>
 </project-private>
